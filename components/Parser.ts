@@ -3,7 +3,25 @@ interface JSONObject {
 }
 
 class Parser {
-	public static beautifyJSON() {}
+	public static sortChar(char: string) {
+		if (char >= 'a' && char <= 'z') return 1
+    if (char >= 'A' && char <= 'Z') return 2
+		if (char >= '0' && char <= '9') return 3
+		return 4
+	}
+
+	public static sortStr(char: string) {
+		return char.split('')
+			.sort(
+				(a, b) => {
+					const comparison = Parser.sortChar(a) - Parser.sortChar(b)
+					if (comparison !== 0) return comparison
+
+					return b.localeCompare(a)
+				}
+			)
+			.join('')
+	}
 
 	// We can just pass the json object directly as a js object
 	// and modify the object directly due to it being passed on
@@ -57,13 +75,11 @@ class Parser {
 			newObj: JSONObject = {} 
 
 		for (const key of keys) {
-			const reversedKey = key.split('')
-				.sort((a, b) => b.localeCompare(a))
-				.join('')
+			const reversedKey = Parser.sortStr(key)
 
 			if (typeof obj[key] === 'object')
 				newObj[reversedKey] = Parser.count(obj[key])
-			else newObj[reversedKey] = obj[key]
+			else newObj[reversedKey] = typeof obj[key] === 'string' ? Parser.sortStr(obj[key]) : obj[key]
 		}
 
 		newObj.objectCount = keys.length
