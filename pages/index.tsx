@@ -45,8 +45,8 @@ export default function Home() {
   )
 
   return (
-    <div class={Styles.mainDiv}>
-      <div class={Styles.queryDiv}>
+    <div className={Styles.mainDiv}>
+      <div className={Styles.queryDiv}>
         <input
           placeholder='https://example.com'
           value={url}
@@ -56,7 +56,7 @@ export default function Home() {
         />
 
         <button
-          class={Styles.queryBtn}
+          className={Styles.queryBtn}
           onClick={handleFetchButton}
         >
           Query
@@ -81,11 +81,11 @@ export default function Home() {
             ) : null
           )
         ) : (
-          <div class={Styles.resultsDiv}>
-            <div class={Styles.resultContainerDiv}>
+          <div className={Styles.resultsDiv}>
+            <div className={Styles.resultContainerDiv}>
               <p>URL Response</p>
 
-              <pre class={Styles.resultBoxDiv}>
+              <pre className={Styles.resultBoxDiv}>
                 {
                   response ?
                     JSON.stringify(response, null, 2) :
@@ -98,10 +98,10 @@ export default function Home() {
               </pre>
             </div>
 
-            <div class={Styles.resultContainerDiv}>
+            <div className={Styles.resultContainerDiv}>
               <p>Processed URL Response</p>
 
-              <pre class={Styles.resultBoxDiv}>
+              <pre className={Styles.resultBoxDiv}>
                 {
                   result ?
                     JSON.stringify(result, null, 2) :
