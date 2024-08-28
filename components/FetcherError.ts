@@ -1,7 +1,8 @@
 enum FetcherErrorCodes {
 	ERR_UNKNOWN_ERROR 	 = 1000,
 	ERR_NOT_SUPPORT_JSON = 1001,
-	ERR_CORS_ISSUE			 = 1002
+	ERR_CORS_ISSUE			 = 1002,
+	ERR_HTTP_ISSUE			 = 1003
 }
 
 class FetcherError extends Error {
