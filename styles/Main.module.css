@@ -1,0 +1,87 @@
+.mainDiv {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 16px 32px;
+	gap: 32px;
+}
+
+.queryDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	gap: 16px;
+}
+
+.queryDiv > input {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid lightgrey;
+	padding: 8px 20px;
+	transition: ease-in-out .2s;
+	font-size: 16px;
+
+	flex-basis: 70%;
+}
+
+.queryDiv > input:hover,
+.queryDiv > input:focus {
+	border-color: #54afff;
+	background-color: rgba(237, 231, 225, 0.4);
+}
+
+.queryDiv > button {
+	border: 1px solid #54afff;
+	outline: none;
+	padding: 8px 32px;
+	color: #54afff;
+	background-color: transparent;
+	cursor: pointer;
+	transition: ease-in-out .2s;
+	font-size: 14px;
+}
+
+.queryDiv > button:hover,
+.queryDiv > button:active {
+	background-color: #54afff;
+	color: white;
+	transform: translateY(-4px);
+	box-shadow: 0px 4px 0px #54afff80;
+}
+
+.queryDiv > button:active {
+	transform: translateY(-2px) !important;
+	box-shadow: 0px 2px 0px #54afff80;
+}
+
+.resultsDiv {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 32px;
+}
+
+.resultContainerDiv {
+	display: flex;
+	flex-direction: column;
+	max-width: 50%;
+}
+
+.resultContainerDiv > p {
+	font-size: 12px;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+}
+
+.resultBoxDiv {
+	border-left: 2px solid #54afff;
+	font-size: 10px;
+	background-color: rgba(237, 231, 225, 0.4);
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	overflow: auto;
+	padding: 8px 16px;
+}
