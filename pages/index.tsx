@@ -51,7 +51,10 @@ export default function Home() {
           placeholder='https://example.com'
           value={url}
           onChange={
-            (event) => setUrl(event.target.value)
+            (event) => {
+              setUrl(event.target.value)
+              localStorage.setItem(typeof event.target.value !== 'string' ? '' : event.target.value)
+            }
           }
         />
 
