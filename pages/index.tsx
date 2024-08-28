@@ -41,7 +41,7 @@ export default function Home() {
       const localUrl = localStorage.getItem('url')
       setUrl(localUrl ?? '')
     },
-    []r
+    []
   )
 
   return (
