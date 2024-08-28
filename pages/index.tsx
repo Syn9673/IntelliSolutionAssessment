@@ -41,7 +41,7 @@ export default function Home() {
       const localUrl = localStorage.getItem('url')
       setUrl(localUrl ?? '')
     },
-    []
+    []r
   )
 
   return (
@@ -53,7 +53,7 @@ export default function Home() {
           onChange={
             (event) => {
               setUrl(event.target.value)
-              localStorage.setItem(typeof event.target.value !== 'string' ? '' : event.target.value)
+              localStorage.setItem('url', typeof event.target.value !== 'string' ? '' : event.target.value)
             }
           }
         />
